@@ -31,29 +31,29 @@ EOF
 docker-compose pull && docker-compose up -d
 
 if [[ -z "$myname" ]]; then
-  read -p "Придумай имя для кошелька: " myname
-  export myname=$myname
+  read -p "Придумай имя для кошелька: " _myname
+  export myname=$_myname
 fi
 
 docker exec ironfish ./bin/run wallet:create $myname
 
 if [[ -z "$myname" ]]; then
-  read -p "Придумай имя для кошелька: " myname
-  export myname=$myname
+  read -p "Придумай имя для кошелька: " _myname
+  export myname=$_myname
 fi
 
 docker exec ironfish ./bin/run wallet:use $myname
 
 if [[ -z "$myname" ]]; then
-  read -p "Придумай имя для кошелька: " myname
-  export myname=$myname
+  read -p "Придумай имя для кошелька: " _myname
+  export myname=$_myname
 fi
 
 docker exec ironfish ./bin/run config:set nodeName $myname
 
 if [[ -z "$myname" ]]; then
-  read -p "Придумай имя для кошелька: " myname
-  export myname=$myname
+  read -p "Придумай имя для кошелька: " _myname
+  export myname=$_myname
 fi
 
 docker exec ironfish ./bin/run config:set blockGraffiti $myname
