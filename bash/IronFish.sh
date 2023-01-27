@@ -3,11 +3,6 @@
 function logo() {
   bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master/bash/logo.sh)
 }
-function reset_env() {
-for i in `env | sed 's/=.*//'` ; do
-  unset $i
-done
-}
 
 function install() {
 sudo apt update && sudo apt upgrade -y
@@ -76,7 +71,6 @@ docker-compose run --rm --entrypoint "./bin/run migrations:start" ironfish
 docker-compose up -d
 }
 
-reset_env
 logo
 if [ -f sdd_co_donotdelete_IronFish ]; then
   update
