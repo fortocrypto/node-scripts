@@ -29,10 +29,34 @@ services:
    - $HOME/.ironfish:/root/.ironfish
 EOF
 docker-compose pull && docker-compose up -d
-docker exec ironfish ./bin/run wallet:create $ironfish_name
-docker exec ironfish ./bin/run wallet:use $ironfish_name
-docker exec ironfish ./bin/run config:set nodeName $ironfish_name
-docker exec ironfish ./bin/run config:set blockGraffiti $ironfish_name
+
+if [[ -z "$ironfishname" ]]; then
+  read -p "Придумай имя для кошелька: " _ironfishname
+  export ironfishname=$_ironfishname
+fi
+
+docker exec ironfish ./bin/run wallet:create $ironfishname
+
+if [[ -z "$ironfishname" ]]; then
+  read -p "Придумай имя для кошелька: " _ironfishname
+  export ironfishname=$_ironfishname
+fi
+
+docker exec ironfish ./bin/run wallet:use $ironfishname
+
+if [[ -z "$ironfishname" ]]; then
+  read -p "Придумай имя для кошелька: " _ironfishname
+  export ironfishname=$_ironfishname
+fi
+
+docker exec ironfish ./bin/run config:set nodeName $ironfishname
+
+if [[ -z "$ironfishname" ]]; then
+  read -p "Придумай имя для кошелька: " _ironfishname
+  export ironfishname=$_ironfishname
+fi
+
+docker exec ironfish ./bin/run config:set blockGraffiti $ironfishname
 docker exec ironfish ./bin/run config:set minerBatchSize 60000
 docker exec ironfish ./bin/run config:set enableTelemetry true
 docker exec ironfish ./bin/run status
