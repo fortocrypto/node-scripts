@@ -29,38 +29,15 @@ services:
    - $HOME/.ironfish:/root/.ironfish
 EOF
 docker-compose pull && docker-compose up -d
-
-if [[ -z "$myname" ]]; then
-  read -p "Придумай имя для кошелька: " _myname
-  export myname=$_myname
-fi
-
-docker exec ironfish ./bin/run wallet:create $myname
-
-if [[ -z "$myname" ]]; then
-  read -p "Придумай имя для кошелька: " _myname
-  export myname=$_myname
-fi
-
-docker exec ironfish ./bin/run wallet:use $myname
-
-if [[ -z "$myname" ]]; then
-  read -p "Придумай имя для кошелька: " _myname
-  export myname=$_myname
-fi
-
-docker exec ironfish ./bin/run config:set nodeName $myname
-
-if [[ -z "$myname" ]]; then
-  read -p "Придумай имя для кошелька: " _myname
-  export myname=$_myname
-fi
-
-docker exec ironfish ./bin/run config:set blockGraffiti $myname
+docker exec ironfish ./bin/run wallet:create $ironfish_name
+docker exec ironfish ./bin/run wallet:use $ironfish_name
+docker exec ironfish ./bin/run config:set nodeName $ironfish_name
+docker exec ironfish ./bin/run config:set blockGraffiti $ironfish_name
 docker exec ironfish ./bin/run config:set minerBatchSize 60000
 docker exec ironfish ./bin/run config:set enableTelemetry true
 docker exec ironfish ./bin/run status
 docker exec ironfish ./bin/run wallet:address
+docker-compose restart
 
 }
 
