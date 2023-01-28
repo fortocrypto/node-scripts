@@ -6,7 +6,7 @@ function logo() {
 
 function install() {
 sudo apt update && sudo apt upgrade -y
-sudo apt install curl git
+sudo apt install curl git -y
 
 
 curl -s https://raw.githubusercontent.com/sorkand1/tools/main/install_docker.sh | bash
@@ -30,38 +30,19 @@ services:
 EOF
 docker-compose pull && docker-compose up -d
 
-if [[ -z "$ironfishname" ]]; then
-  read -p "Придумай имя для кошелька: " _ironfishname
-  export ironfishname=$_ironfishname
+if [[ -z "$myname" ]]; then
+  read -p "Придумай имя для кошелька: " myname
+  export myname=$myname
 fi
 
-docker exec ironfish ./bin/run wallet:create $ironfishname
-
-if [[ -z "$ironfishname" ]]; then
-  read -p "Придумай имя для кошелька: " _ironfishname
-  export ironfishname=$_ironfishname
-fi
-
-docker exec ironfish ./bin/run wallet:use $ironfishname
-
-if [[ -z "$ironfishname" ]]; then
-  read -p "Придумай имя для кошелька: " _ironfishname
-  export ironfishname=$_ironfishname
-fi
-
-docker exec ironfish ./bin/run config:set nodeName $ironfishname
-
-if [[ -z "$ironfishname" ]]; then
-  read -p "Придумай имя для кошелька: " _ironfishname
-  export ironfishname=$_ironfishname
-fi
-
-docker exec ironfish ./bin/run config:set blockGraffiti $ironfishname
+docker exec ironfish ./bin/run wallet:create $myname
+docker exec ironfish ./bin/run wallet:use $myname
+docker exec ironfish ./bin/run config:set nodeName $myname
+docker exec ironfish ./bin/run config:set blockGraffiti $myname
 docker exec ironfish ./bin/run config:set minerBatchSize 60000
 docker exec ironfish ./bin/run config:set enableTelemetry true
 docker exec ironfish ./bin/run status
 docker exec ironfish ./bin/run wallet:address
-docker-compose restart
 
 }
 
