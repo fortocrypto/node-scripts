@@ -40,7 +40,7 @@ echo "journalctl -n 100 -f -u fleek -o cat"
 }
 
 function update() {
-
+sudo apt update && sudo apt upgrade -y
 }
 
 logo
