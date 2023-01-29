@@ -1,13 +1,12 @@
 #!/bin/bash
 
 function logo() {
-  bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master/bash/logo.sh)
+bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master/bash/logo.sh)
 }
 
 function install() {
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl git -y
-
 
 curl -s https://raw.githubusercontent.com/sorkand1/tools/main/install_docker.sh | bash
 echo "alias ironfish='docker exec ironfish ./bin/run'" >> ~/.profile
@@ -30,34 +29,24 @@ services:
 EOF
 docker-compose pull && docker-compose up -d
 
-if [[ -z "$myname" ]]; then
-  read -p "Придумай имя для кошелька: " myname
-  export myname=$myname
+if [[ -z "$ironfishname" ]]; then
+  read -p "Придумай имя для кошелька: " _ironfishname
+  export ironfishname=$_ironfishname
 fi
 
-docker exec ironfish ./bin/run wallet:create $myname
-docker exec ironfish ./bin/run wallet:use $myname
-docker exec ironfish ./bin/run config:set nodeName $myname
-docker exec ironfish ./bin/run config:set blockGraffiti $myname
+docker exec ironfish ./bin/run wallet:create $ironfishname
+docker exec ironfish ./bin/run wallet:use $ironfishname
+docker exec ironfish ./bin/run config:set nodeName $ironfishname
+docker exec ironfish ./bin/run config:set blockGraffiti $ironfishname
 docker exec ironfish ./bin/run config:set minerBatchSize 60000
 docker exec ironfish ./bin/run config:set enableTelemetry true
 docker exec ironfish ./bin/run status
 docker exec ironfish ./bin/run wallet:address
+docker-compose restart
 
-}
-
-function update() {
-docker-compose down
-docker-compose pull
-docker-compose run --rm --entrypoint "./bin/run migrations:start" ironfish
-docker-compose up -d
 }
 
 logo
-if [ -f sdd_co_donotdelete_IronFish ]; then
-  update
-else
-  install
-  touch sdd_co_donotdelete_IronFish
-fi
+install
+touch $HOME/.sdd_IronFish_do_not_remove
 logo

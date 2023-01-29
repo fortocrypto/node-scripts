@@ -1,13 +1,12 @@
 #!/bin/bash
 
 function logo() {
-  bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master/bash/logo.sh)
+bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master/bash/logo.sh)
 }
 
 function install() {
 sudo apt update && sudo apt upgrade -y
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
-
 
 curl -s https://raw.githubusercontent.com/sorkand1/tools/main/install_docker.sh | bash
 mkdir -p $HOME/sui
@@ -21,15 +20,7 @@ docker-compose up -d
 
 }
 
-function update() {
-
-}
-
 logo
-if [ -f sdd_co_donotdelete_Sui ]; then
-  update
-else
-  install
-  touch sdd_co_donotdelete_Sui
-fi
+install
+touch $HOME/.sdd_Sui_do_not_remove
 logo
