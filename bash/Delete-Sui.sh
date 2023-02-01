@@ -7,6 +7,7 @@ bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master
 function delete() {
 reset
 rm -f $HOME/.sdd_Sui_do_not_remove
+cd $HOME/sui
 docker-compose down -v
 sudo rm -rf ~/sui /var/sui/ /usr/local/bin/sui*
 sudo rm /etc/systemd/system/suid.service
