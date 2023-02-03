@@ -5,7 +5,10 @@ bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master
 }
 
 function install() {
-sudo apt update && sudo apt upgrade -y
+sudo apt --fix-broken install
+sudo apt-get update && sudo apt-get upgrade -y
+sudo dpkg --configure -a
+sudo apt-get install -f -y
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 
 curl -s https://raw.githubusercontent.com/sorkand1/tools/main/install_docker.sh | bash
