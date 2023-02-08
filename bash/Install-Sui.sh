@@ -11,7 +11,7 @@ sudo dpkg --configure -a
 sudo apt-get install -f -y
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 
-curl -s https://raw.githubusercontent.com/sorkand1/tools/main/install_docker.sh | bash
+curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master/bash/Install-Docker.sh | bash
 mkdir -p $HOME/sui
 cd $HOME/sui
 wget -O $HOME/sui/fullnode-template.yaml https://github.com/MystenLabs/sui/raw/main/crates/sui-config/data/fullnode-template.yaml
