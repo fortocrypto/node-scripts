@@ -12,6 +12,7 @@ sudo systemctl stop nibid
 sudo systemctl disable nibid
 rm -rf $HOME/nibiru
 rm -rf $HOME/.nibid
+rm /usr/local/bin/nibid
 rm /etc/systemd/system/nibid.service
 }
 
