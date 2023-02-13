@@ -5,7 +5,11 @@ bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master
 }
 
 function update() {
-sudo apt update && sudo apt upgrade -y
+cd $HOME/muon-node-js
+docker-compose down
+docker-compose pull
+docker-compose up -d
+cd $HOME
 }
 
 logo
