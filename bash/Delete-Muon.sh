@@ -8,9 +8,9 @@ function delete() {
 reset
 rm -f $HOME/.sdd_Muon_do_not_remove
 cd $HOME/muon-node-js
+muon_backup
 docker-compose down
-cd $HOME
-rm -rf muon-node-js
+cd $HOME && rm -Rf cd $HOME/muon-node-js
 }
 
 logo
