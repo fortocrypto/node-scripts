@@ -5,6 +5,7 @@ bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master
 }
 
 function update() {
+cd $HOME
 docker-compose down
 docker-compose pull
 docker-compose run --rm --entrypoint "./bin/run migrations:start" ironfish
