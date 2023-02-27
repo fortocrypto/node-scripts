@@ -11,6 +11,7 @@ if [ -d "/usr/local/go" ]; then
 echo "Go already installed"
 else
 ver="1.19.4"
+echo "Installing Go $ver"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
