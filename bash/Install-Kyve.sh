@@ -17,7 +17,7 @@ rm "go$ver.linux-amd64.tar.gz"
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 go version
 fi
-cd $SDD_NM_HOME
+cd $SDD_NM_HOME/.Kyve
 wget https://files.kyve.network/chain/v1.0.0-rc0/kyved_linux_amd64.tar.gz && \
 tar -xvzf kyved_linux_amd64.tar.gz  && \
 mv kyved /usr/local/bin/ && \

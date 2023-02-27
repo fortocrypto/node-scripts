@@ -6,7 +6,7 @@ sudo systemctl disable kyved
 cd $HOME
 rm /etc/systemd/system/kyved.service
 rm /usr/local/bin/kyved
-rm -r $SDD_NM_HOME/kyve
+rm -r $SDD_NM_HOME/.Kyve/kyve
 rm -r $HOME/.kyve
 }
 

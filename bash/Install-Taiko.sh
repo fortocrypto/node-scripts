@@ -8,7 +8,7 @@ sudo apt-get install -f -y
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 cd $HOME
 curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master/bash/Install-Docker.sh | bash
-cd $SDD_NM_HOME
+cd $SDD_NM_HOME/.Taiko
 git clone https://github.com/taikoxyz/simple-taiko-node.git
 cd simple-taiko-node
 cp .env.sample .env

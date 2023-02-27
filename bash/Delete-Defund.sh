@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function delete() {
-cd $SDD_NM_HOME
+cd $SDD_NM_HOME/.Defund
 sudo systemctl stop defund
 sudo systemctl disable defund
 sudo rm -rf /etc/systemd/system/defund.service

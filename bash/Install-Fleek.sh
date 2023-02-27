@@ -11,7 +11,7 @@ source $HOME/.cargo/env
 sleep 1
 source $HOME/.profile
 cargo install sccache
-cd $SDD_NM_HOME
+cd $SDD_NM_HOME/.Fleek
 git clone https://github.com/fleek-network/ursa.git
 cd ursa
 make install
@@ -22,7 +22,7 @@ Description=Fleek node
 [Service]
 User=$USER
 ExecStart=/root/.cargo/bin/ursa
-WorkingDirectory=$SDD_NM_HOME/ursa
+WorkingDirectory=$SDD_NM_HOME/.Fleek,ursa
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535

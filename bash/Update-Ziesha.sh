@@ -3,7 +3,7 @@
 function update() {
 cd $HOME
 sudo systemctl stop ziesha
-cd $SDD_NM_HOME/bazuka
+cd $SDD_NM_HOME/.Ziesha/bazuka
 git pull origin master
 cargo update
 cargo install --path .

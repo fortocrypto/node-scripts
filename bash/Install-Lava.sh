@@ -17,7 +17,7 @@ rm "go$ver.linux-amd64.tar.gz"
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 go version
 fi
-cd $SDD_NM_HOME
+cd $SDD_NM_HOME/.Lava
 git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T
 wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.3.0/lavad
 chmod +x lavad

@@ -8,12 +8,11 @@ sudo apt-get install -f -y
 sudo apt install wget jq git curl build-essential libssl-dev gcc cmake mc -y
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source ~/.cargo/env
-cd $SDD_NM_HOME
+cd $SDD_NM_HOME/.Ziesha
 git clone https://github.com/ziesha-network/bazuka
-cd $SDD_NM_HOME/bazuka
+cd $SDD_NM_HOME/.Ziesha/bazuka
 git pull origin master
 cargo install --path .
-cd $SDD_NM_HOME
 bazuka init --network pelmeni-5 --bootstrap 65.108.193.133:8765
 ZEEKADISCORD=$discordname
 echo "export ZEEKADISCORD="${ZEEKADISCORD}"" >> $HOME/.bash_profile

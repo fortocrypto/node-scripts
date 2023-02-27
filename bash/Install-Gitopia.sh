@@ -25,7 +25,7 @@ rm "go$ver.linux-amd64.tar.gz"
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 go version
 fi
-cd $SDD_NM_HOME
+cd $SDD_NM_HOME/.Gitopia
 git clone -b v1.2.0 gitopia://gitopia/gitopia && cd gitopia
 make install
 gitopiad config chain-id $GITOPIA_CHAIN_ID

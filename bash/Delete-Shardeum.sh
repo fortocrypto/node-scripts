@@ -1,10 +1,10 @@
 #!/bin/bash
 
 function delete() {
-cd $SDD_NM_HOME/.shardeum
+cd $SDD_NM_HOME/.Shardeum/.shardeum
 docker compose down
 cd $HOME
-rm -Rf $SDD_NM_HOME/.shardeum
+rm -Rf cd $SDD_NM_HOME/.Shardeum/.shardeum
 }
 
 delete
