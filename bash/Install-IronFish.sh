@@ -6,7 +6,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo dpkg --configure -a
 sudo apt-get install -f -y
 sudo apt install curl git -y
-curl -s https://raw.githubusercontent.com/sorkand1/tools/main/install_docker.sh | bash
+curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master/bash/Install-Docker.sh | bash
 echo "alias ironfish='docker exec ironfish ./bin/run'" >> ~/.profile
 source ~/.profile
 sudo tee <<EOF >/dev/null $SDD_NM_HOME/.IronFish/docker-compose.yaml
