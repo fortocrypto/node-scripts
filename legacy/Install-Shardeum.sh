@@ -28,7 +28,7 @@ operator-cli gui start
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Shardeum_do_not_remove
-logo
+

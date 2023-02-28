@@ -66,7 +66,7 @@ sudo systemctl restart kyved
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Kyve_do_not_remove
-logo
+

@@ -16,8 +16,8 @@ rm -r $HOME/kyve
 rm -r $HOME/.kyve
 }
 
-logo
+
 if [ -f $HOME/.sdd_Kyve_do_not_remove ]; then
   delete
-  logo
+  
 fi

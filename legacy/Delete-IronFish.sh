@@ -12,8 +12,8 @@ rm -Rf $HOME/.ironfish
 rm $HOME/docker-compose.yaml
 }
 
-logo
+
 if [ -f $HOME/.sdd_IronFish_do_not_remove ]; then
   delete
-  logo
+  
 fi

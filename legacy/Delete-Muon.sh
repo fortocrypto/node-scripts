@@ -13,8 +13,8 @@ docker-compose down
 cd $HOME && rm -Rf cd $HOME/muon-node-js
 }
 
-logo
+
 if [ -f $HOME/.sdd_Muon_do_not_remove ]; then
   delete
-  logo
+  
 fi

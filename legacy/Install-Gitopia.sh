@@ -85,7 +85,7 @@ sudo ufw enable
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Gitopia_do_not_remove
-logo
+

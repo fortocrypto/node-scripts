@@ -9,8 +9,8 @@ sudo apt update
 sudo apt upgrade -y
 }
 
-logo
+
 if [ -f $HOME/.sdd_Shardeum_do_not_remove ]; then
   update
-  logo
+  
 fi

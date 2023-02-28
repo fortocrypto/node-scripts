@@ -30,7 +30,7 @@ sudo $MESON/service status meson_cdn
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Meson_do_not_remove
-logo
+

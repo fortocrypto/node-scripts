@@ -14,8 +14,8 @@ systemctl restart defund
 cd $HOME
 }
 
-logo
+
 if [ -f $HOME/.sdd_Defund_do_not_remove ]; then
   update
-  logo
+  
 fi

@@ -16,8 +16,8 @@ sudo systemctl daemon-reload
 echo "yours passPhrase is saved in ~/passPhraseBackup.txt"
 }
 
-logo
+
 if [ -f $HOME/.sdd_Ziesha_do_not_remove ]; then
   delete
-  logo
+  
 fi

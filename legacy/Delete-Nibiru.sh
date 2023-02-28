@@ -16,8 +16,8 @@ rm /usr/local/bin/nibid
 rm /etc/systemd/system/nibid.service
 }
 
-logo
+
 if [ -f $HOME/.sdd_Nibiru_do_not_remove ]; then
   delete
-  logo
+  
 fi

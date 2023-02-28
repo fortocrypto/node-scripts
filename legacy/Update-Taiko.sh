@@ -8,8 +8,8 @@ function update() {
 sudo apt update && sudo apt upgrade -y
 }
 
-logo
+
 if [ -f $HOME/.sdd_Taiko_do_not_remove ]; then
   update
-  logo
+  
 fi

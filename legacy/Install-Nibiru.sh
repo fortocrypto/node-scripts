@@ -74,7 +74,7 @@ sudo systemctl restart nibid
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Nibiru_do_not_remove
-logo
+

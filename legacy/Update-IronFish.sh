@@ -12,8 +12,8 @@ docker-compose run --rm --entrypoint "./bin/run migrations:start" ironfish
 docker-compose up -d
 }
 
-logo
+
 if [ -f $HOME/.sdd_IronFish_do_not_remove ]; then
   update
-  logo
+  
 fi

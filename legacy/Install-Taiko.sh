@@ -20,7 +20,7 @@ docker-compose up -d
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Taiko_do_not_remove
-logo
+

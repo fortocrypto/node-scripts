@@ -22,8 +22,8 @@ unset monikername
 unset walletname
 }
 
-logo
+
 if [ -f $HOME/.sdd_Defund_do_not_remove ]; then
   delete
-  logo
+  
 fi

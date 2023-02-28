@@ -16,8 +16,8 @@ sudo systemctl restart ziesha
 sudo journalctl -f -u ziesha
 }
 
-logo
+
 if [ -f $HOME/.sdd_Ziesha_do_not_remove ]; then
   update
-  logo
+  
 fi

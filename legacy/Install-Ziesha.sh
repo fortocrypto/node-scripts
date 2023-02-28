@@ -51,7 +51,7 @@ sudo systemctl restart ziesha
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Ziesha_do_not_remove
-logo
+

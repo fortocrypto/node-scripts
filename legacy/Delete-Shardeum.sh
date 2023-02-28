@@ -13,8 +13,8 @@ cd $HOME
 rm -Rf $HOME/.shardeum
 }
 
-logo
+
 if [ -f $HOME/.sdd_Shardeum_do_not_remove ]; then
   delete
-  logo
+  
 fi

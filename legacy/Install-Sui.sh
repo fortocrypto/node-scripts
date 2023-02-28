@@ -23,7 +23,7 @@ docker-compose up -d
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Sui_do_not_remove
-logo
+

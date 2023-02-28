@@ -19,8 +19,8 @@ sudo ufw reset
 sudo ufw disable
 }
 
-logo
+
 if [ -f $HOME/.sdd_Gitopia_do_not_remove ]; then
   delete
-  logo
+  
 fi

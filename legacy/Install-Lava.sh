@@ -67,7 +67,7 @@ systemctl restart lavad
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Lava_do_not_remove
-logo
+

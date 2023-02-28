@@ -16,8 +16,8 @@ rm -rf .lava
 rm -f /usr/local/bin/lavad
 }
 
-logo
+
 if [ -f $HOME/.sdd_Lava_do_not_remove ]; then
   delete
-  logo
+  
 fi

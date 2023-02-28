@@ -41,7 +41,7 @@ echo "journalctl -n 100 -f -u fleek -o cat"
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Fleek_do_not_remove
-logo
+

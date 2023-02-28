@@ -49,7 +49,7 @@ docker-compose restart
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_IronFish_do_not_remove
-logo
+

@@ -25,7 +25,7 @@ cd $HOME
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Muon_do_not_remove
-logo
+

@@ -67,7 +67,7 @@ sudo systemctl restart defund
 
 }
 
-logo
+
 install
 touch $HOME/.sdd_Defund_do_not_remove
-logo
+

@@ -12,8 +12,8 @@ docker-compose up -d
 cd $HOME
 }
 
-logo
+
 if [ -f $HOME/.sdd_Muon_do_not_remove ]; then
   update
-  logo
+  
 fi

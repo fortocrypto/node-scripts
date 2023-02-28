@@ -15,8 +15,8 @@ rm -rf simple-taiko-node
 cd $HOME
 }
 
-logo
+
 if [ -f $HOME/.sdd_Taiko_do_not_remove ]; then
   delete
-  logo
+  
 fi
