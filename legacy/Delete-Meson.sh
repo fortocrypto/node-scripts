@@ -5,7 +5,7 @@ bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master
 }
 
 function delete() {
-reset
+
 rm -f $HOME/.sdd_Meson_do_not_remove
 cd
 sudo $HOME/meson_cdn-linux-amd64/service stop meson_cdn

@@ -5,7 +5,7 @@ bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master
 }
 
 function delete() {
-reset
+
 rm -f $HOME/.sdd_Taiko_do_not_remove
 cd $HOME/simple-taiko-node
 sudo docker-compose down

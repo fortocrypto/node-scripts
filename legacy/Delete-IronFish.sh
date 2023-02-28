@@ -5,7 +5,7 @@ bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master
 }
 
 function delete() {
-reset
+
 rm -f $HOME/.sdd_IronFish_do_not_remove
 docker-compose down
 rm -Rf $HOME/.ironfish

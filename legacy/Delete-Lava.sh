@@ -5,7 +5,7 @@ bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master
 }
 
 function delete() {
-reset
+
 rm -f $HOME/.sdd_Lava_do_not_remove
 cd $HOME
 systemctl stop lavad

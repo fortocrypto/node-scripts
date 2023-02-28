@@ -5,7 +5,7 @@ bash <(curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master
 }
 
 function delete() {
-reset
+
 rm -f $HOME/.sdd_Kyve_do_not_remove
 sudo systemctl stop kyved
 sudo systemctl disable kyved
