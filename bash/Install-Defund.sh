@@ -11,8 +11,6 @@ if [ -d "/usr/local/go" ]; then
 echo "Go already installed"
 else
 ver="1.19.4"
-echo "Installing Go $ver"
-echo "Downloading Go $ver"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
@@ -53,6 +51,19 @@ sudo systemctl restart systemd-journald
 sleep 1
 sudo systemctl daemon-reload
 sudo systemctl enable defund
+sudo systemctl restart defund
+sleep 1
+available_ports=$(ss -Htan | awk '{print $4}' | cut -d ':' -f 2 | grep -v -E '^(0|1|5|6|7|8|9)' | sort -un)
+selected_ports=$(echo "$available_ports" | shuf -n 8)
+i=1
+for port in $selected_ports; do
+varname="var$i"
+eval $varname=$port
+((i++))
+done
+sed -i.bak -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:$var1\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:$var2\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:$var3\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:$var4\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":$var5\"%" $HOME/.defund/config/config.toml
+sed -i.bak -e "s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:$var6\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:$var7\"%" $HOME/.defund/config/app.toml
+sed -i.bak -e "s%^node = \"tcp://localhost:26657\"%node = \"tcp://localhost:$var2\"%" $HOME/.defund/config/client.toml
 sudo systemctl restart defund
 }
 
