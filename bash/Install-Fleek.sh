@@ -22,7 +22,7 @@ Description=Fleek node
 [Service]
 User=$USER
 ExecStart=/root/.cargo/bin/ursa
-WorkingDirectory=$SDD_NM_HOME/.Fleek,ursa
+WorkingDirectory=$SDD_NM_HOME/.Fleek/ursa
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
