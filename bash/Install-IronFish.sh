@@ -9,6 +9,15 @@ sudo apt install curl git -y
 curl -s https://raw.githubusercontent.com/fortocrypto/node-scripts/master/bash/Install-Docker.sh | bash
 echo "alias ironfish='docker exec ironfish ./bin/run'" >> ~/.profile
 source ~/.profile
+sleep 1
+available_ports=$(ss -Htan | awk '{print $4}' | cut -d ':' -f 2 | grep -v -E '^(0|1|5|6|7|8|9)' | sort -un)
+selected_ports=$(echo "$available_ports" | shuf -n 2)
+i=1
+for port in $selected_ports; do
+varname="var$i"
+eval $varname=$port
+((i++))
+done
 sudo tee <<EOF >/dev/null $SDD_NM_HOME/.IronFish/docker-compose.yaml
 version: "3.3"
 services:
@@ -18,7 +27,7 @@ services:
   restart: always
   entrypoint: sh -c "sed -i 's%REQUEST_BLOCKS_PER_MESSAGE.*%REQUEST_BLOCKS_PER_MESSAGE = 5%' /usr/src/app/node_modules/ironfish/src/syncer.ts && apt update > /dev/null && apt install curl -y > /dev/null; ./bin/run start"
   healthcheck:
-   test: "curl -s -H 'Connection: Upgrade' -H 'Upgrade: websocket' http://127.0.0.1:9033 || killall5 -9"
+   test: "curl -s -H 'Connection: Upgrade' -H 'Upgrade: websocket' http://127.0.0.1:$var1 || killall5 -9"
    interval: 180s
    timeout: 180s
    retries: 3
