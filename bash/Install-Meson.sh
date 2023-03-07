@@ -10,14 +10,13 @@ cd
 sudo ufw disable
 sudo ufw allow 443
 cd $SDD_NM_HOME/.Meson
-wget 'https://staticassets.meson.network/public/meson_cdn/v3.1.19/meson_cdn-linux-amd64.tar.gz' && tar -zxf meson_cdn-linux-amd64.tar.gz && rm -f meson_cdn-linux-amd64.tar.gz && cd ./meson_cdn-linux-amd64 && sudo ./service install meson_cdn
-echo $($tokencommand)
+wget -P $SDD_NM_HOME/.Meson/ 'https://staticassets.meson.network/public/meson_cdn/v3.1.19/meson_cdn-linux-amd64.tar.gz' && tar -zxf meson_cdn-linux-amd64.tar.gz && rm -f meson_cdn-linux-amd64.tar.gz && cd $SDD_NM_HOME/.Meson/meson_cdn-linux-amd64 && sudo $SDD_NM_HOME/.Meson/meson_cdn-linux-amd64/service install meson_cdn
+sudo $SDD_NM_HOME/.Meson/meson_cdn-linux-amd64/meson_cdn config set --token=$token --https_port=443 --cache.size=30
 cd
-MESON=$SDD_NM_HOME/.Meson/meson_cdn-linux-amd64
-echo 'export MESON=meson_cdn-linux-amd64' >>~/.bash_profile
+echo 'export MESON=$SDD_NM_HOME/.Meson/meson_cdn-linux-amd64' >>~/.bash_profile
 source ~/.bash_profile
-sudo $MESON/service start meson_cdn
-sudo $MESON/service status meson_cdn
+sudo $SDD_NM_HOME/.Meson/meson_cdn-linux-amd64/service start meson_cdn
+sudo $SDD_NM_HOME/.Meson/meson_cdn-linux-amd64/service status meson_cdn
 }
 
 install
