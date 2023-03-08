@@ -107,8 +107,6 @@ sed -i "s/- '9001-9010:9001-9010'/- '$SHMEXT:$SHMEXT'/" docker-compose.yml
 sed -i "s/- '10001-10010:10001-10010'/- '$SHMINT:$SHMINT'/" docker-compose.yml
 fi
 ./docker-up.sh
-docker-safe exec -it shardeum-dashboard /bin/bash
-operator-cli gui start
 }
 
 install
