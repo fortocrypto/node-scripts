@@ -107,7 +107,6 @@ sed -i "s/- '9001-9010:9001-9010'/- '$SHMEXT:$SHMEXT'/" docker-compose.yml
 sed -i "s/- '10001-10010:10001-10010'/- '$SHMINT:$SHMINT'/" docker-compose.yml
 fi
 ./docker-up.sh
-(docker-safe logs -f shardeum-dashboard &) | grep -q 'done'
 cd $SDD_NM_HOME/.Shardeum/.shardeum
 . ./shell.sh
 operator-cli gui start
