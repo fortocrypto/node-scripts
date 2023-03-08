@@ -107,6 +107,8 @@ sed -i "s/- '9001-9010:9001-9010'/- '$SHMEXT:$SHMEXT'/" docker-compose.yml
 sed -i "s/- '10001-10010:10001-10010'/- '$SHMINT:$SHMINT'/" docker-compose.yml
 fi
 ./docker-up.sh
+echo "alias shardeumShell='$HOME/.sdd_node_manager_workspace/input/projects/.Shardeum/.shardeum/shell.sh'" >> ~/.bashrc
+source ~/.bashrc
 }
 
 install
