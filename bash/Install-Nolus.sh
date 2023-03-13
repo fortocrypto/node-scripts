@@ -26,7 +26,7 @@ git clone https://github.com/Nolus-Protocol/nolus-core
 cd nolus-core
 git checkout v0.1.39
 make build
-sudo mv $SDD_NM_HOME/.Nolus/target/release/nolusd /usr/local/bin/ || exit
+sudo mv $SDD_NM_HOME/.Nolus/nolus-core/target/release/nolusd /usr/local/bin/ || exit
 nolusd init "$NOLUS_NODENAME" --chain-id=nolus-rila
 #seeds="8e1590558d8fede2f8c9405b7ef550ff455ce842@51.79.30.9:26656,bfffaf3b2c38292bd0aa2a3efe59f210f49b5793@51.91.208.71:26656,106c6974096ca8224f20a85396155979dbd2fb09@198.244.141.176:26656"
 peers="56cee116ac477689df3b4d86cea5e49cfb450dda@54.246.232.38:26656,56f14005119e17ffb4ef3091886e6f7efd375bfd@34.241.107.0:26656,7f26067679b4323496319fda007a279b52387d77@63.35.222.83:26656,7f4a1876560d807bb049b2e0d0aa4c60cc83aa0a@63.32.88.49:26656,3889ba7efc588b6ec6bdef55a7295f3dd559ebd7@3.249.209.26:26656,de7b54f988a5d086656dcb588f079eb7367f6033@34.244.137.169:26656"
