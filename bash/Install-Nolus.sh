@@ -22,7 +22,8 @@ echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 . $HOME/.bash_profile
 sleep 1
 cd $SDD_NM_HOME/.Nolus
-git clone https://github.com/Nolus-Protocol/nolus-core
+git clone https://github.com/Nolus-Protocol/nolus-core.git
+sleep 5
 cd nolus-core
 git checkout v0.1.39
 make build
