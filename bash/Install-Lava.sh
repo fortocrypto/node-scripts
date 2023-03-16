@@ -9,6 +9,7 @@ sudo apt install make clang git pkg-config libssl-dev build-essential gcc chrony
 cd $HOME
 if [ -d "/usr/local/go" ]; then
 echo "Go already installed"
+export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 else
 ver="1.19.4"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
