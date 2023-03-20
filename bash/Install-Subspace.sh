@@ -11,7 +11,6 @@ wget -O subspace-cli https://github.com/subspace/subspace-cli/releases/download/
 sudo chmod +x subspace-cli
 sudo mv subspace-cli /usr/local/bin/
 sudo rm -rf $HOME/.config/subspace-cli
-/usr/local/bin/subspace-cli init
 source ~/.bash_profile
 sleep 1
 echo "[Unit]
