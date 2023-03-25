@@ -7,7 +7,7 @@ sudo dpkg --configure -a
 sudo apt-get install -f -y
 sudo apt install tar curl git ufw ca-certificates ocl-icd-opencl-dev libopencl-clang-dev libgomp1 -y
 cd $SDD_NM_HOME/.Subspace
-wget -O subspace-cli https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-Ubuntu-x86_64-v0.1.9-alpha
+wget -O subspace-cli https://github.com/subspace/subspace-cli/releases/download/v0.1.11-alpha/subspace-cli-ubuntu-x86_64-v3-v0.1.11-alpha
 sudo chmod +x subspace-cli
 sudo mv subspace-cli /usr/local/bin/
 sudo rm -rf $HOME/.config/subspace-cli
