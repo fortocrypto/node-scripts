@@ -14,10 +14,10 @@ sleep 5
 docker compose up -d
 sleep 10
 docker compose down
-sed -i.bak -e "s/^L1_ENDPOINT_HTTP *=.*/L1_ENDPOINT_HTTP = $l1_endpoint_http/" .env
-sed -i.bak -e "s/^L1_ENDPOINT_WS *=.*/L1_ENDPOINT_WS = $l1_endpoint_ws/" .env
-sed -i.bak -e "s/^ENABLE_PROPOSER *=.*/ENABLE_PROPOSER = true/" .env
-sed -i.bak -e "s/^L1_PROVER_PRIVATE_KEY *=.*/L1_PROVER_PRIVATE_KEY = $l1_prover_private_key/" .env
+sed -i.bak -e "s/^L1_ENDPOINT_HTTP *=.*/L1_ENDPOINT_HTTP=$l1_endpoint_http/" .env
+sed -i.bak -e "s/^L1_ENDPOINT_WS *=.*/L1_ENDPOINT_WS=$l1_endpoint_ws/" .env
+sed -i.bak -e "s/^ENABLE_PROVER *=.*/ENABLE_PROVER=true/" .env
+sed -i.bak -e "s/^L1_PROVER_PRIVATE_KEY *=.*/L1_PROVER_PRIVATE_KEY=$l1_prover_private_key/" .env
 sleep 5
 docker compose up -d
 }
