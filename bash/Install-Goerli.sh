@@ -11,7 +11,7 @@ cd $SDD_NM_HOME/.Goerli
 git clone https://github.com/base-org/node.git
 cd node
 sed -i -e "s|^OP_NODE_L1_ETH_RPC *=.*|OP_NODE_L1_ETH_RPC =$l1rpcurl|" $SDD_NM_HOME/.Goerli/node/docker-compose.yml
-docker compose up
+docker compose up -d
 }
 
 install
