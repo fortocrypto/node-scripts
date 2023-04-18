@@ -36,8 +36,8 @@ After=network.target
 [Service]
 User=$USER
 Type=simple
-WorkingDirectory=$HOME/pathfinder/py
-ExecStart=/bin/bash -c \"source $HOME/pathfinder/py/.venv/bin/activate && /usr/local/bin/pathfinder --http-rpc=\"0.0.0.0:9545\" --ethereum.url $ALCHEMY\"
+WorkingDirectory=$SDD_NM_HOME/.Starknet/pathfinder/py
+ExecStart=/bin/bash -c \"source $SDD_NM_HOME/.Starknet/pathfinder/py/.venv/bin/activate && /usr/local/bin/pathfinder --http-rpc=\"0.0.0.0:9545\" --ethereum.url $ALCHEMY\"
 Restart=on-failure
 LimitNOFILE=65535
 [Install]
