@@ -8,6 +8,7 @@ sudo apt-get install -f -y
 sudo apt install software-properties-common curl git tmux python3.10 python3.10-venv python3.10-dev build-essential libgmp-dev pkg-config libssl-dev -y
 echo 'export ALCHEMY='$alchemy_address >> $HOME/.bash_profile
 source $HOME/.bash_profile
+sudo apt update && sudo apt-get install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
