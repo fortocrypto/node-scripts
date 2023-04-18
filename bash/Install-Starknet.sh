@@ -5,7 +5,7 @@ sudo apt --fix-broken install
 sudo apt-get update && sudo apt-get upgrade -y
 sudo dpkg --configure -a
 sudo apt-get install -f -y
-sudo apt install curl git tmux build-essential -y
+sudo apt install curl git tmux build-essential pip -y
 echo 'export ALCHEMY='$alchemy_address >> $HOME/.bash_profile
 source $HOME/.bash_profile
 sudo apt update && sudo apt-get install software-properties-common -y
